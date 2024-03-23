@@ -7,7 +7,6 @@ import { COMPANY } from '../constants/Company';
 import { CONTACT } from '../constants/Contact';
 import { OVERVIEW } from '../constants/Overview';
 import { QUESTION } from '../constants/Question';
-import { TERM } from '../constants/Term';
 import { Color, Space, Typography } from '../styles/variables';
 
 import { Box } from './Box';
@@ -39,7 +38,9 @@ export const Footer: React.FC = () => {
 
   const updateDialogContent = useSetAtom(DialogContentAtom);
 
-  const handleRequestToTermDialogOpen = () => {
+  const handleRequestToTermDialogOpen = async() => {
+    const term = await fetch("/assets/Term.txt")
+    const TERM = await term.text()
     updateDialogContent(
       <_Content aria-labelledby={termDialogA11yId} role="dialog">
         <Text as="h2" color={Color.MONO_100} id={termDialogA11yId} typography={Typography.NORMAL16}>
