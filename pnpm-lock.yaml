@@ -126,6 +126,9 @@ importers:
       csstype:
         specifier: 3.1.3
         version: 3.1.3
+      date-fns:
+        specifier: 3.6.0
+        version: 3.6.0
       jotai:
         specifier: 2.7.0
         version: 2.7.0(@types/react@18.2.0)(react@18.2.0)
@@ -135,9 +138,6 @@ importers:
       lodash:
         specifier: 4.17.21
         version: 4.17.21
-      moment-timezone:
-        specifier: 0.5.45
-        version: 0.5.45
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -4793,6 +4793,10 @@ packages:
     dependencies:
       whatwg-mimetype: 4.0.0
       whatwg-url: 14.0.0
+    dev: false
+
+  /date-fns@3.6.0:
+    resolution: {integrity: sha512-fRHTG8g/Gif+kSh50gaGEdToemgfj74aRX3swtiouboip5JDLAyDE9F11nHMIcvOaXeOC6D7SpNhi7uFyB7Uww==}
     dev: false
 
   /date-format@4.0.14:
