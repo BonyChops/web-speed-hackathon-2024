@@ -7,7 +7,7 @@ import { Link } from '../../../foundation/components/Link';
 import { Text } from '../../../foundation/components/Text';
 import { useImage } from '../../../foundation/hooks/useImage';
 import { Color, Radius, Space, Typography } from '../../../foundation/styles/variables';
-import { useBook } from '../../book/hooks/useBook';
+import { useFeatureList } from '../hooks/useFeatureList';
 
 const _Wrapper = styled(Link)`
   display: grid;
@@ -45,10 +45,10 @@ const _AvatarWrapper = styled.div`
 
 type Props = {
   bookId: string;
+  book: ReturnType<typeof useFeatureList>['data'][0]['book'];
 };
 
-const FeatureCard: React.FC<Props> = ({ bookId }) => {
-  const { data: book } = useBook({ params: { bookId } });
+const FeatureCard: React.FC<Props> = ({ bookId, book }) => {
 
   const imageUrl = useImage({ height: 96, imageId: book.image.id, width: 96 });
   const authorImageUrl = useImage({ height: 32, imageId: book.author.image.id, width: 32 });
