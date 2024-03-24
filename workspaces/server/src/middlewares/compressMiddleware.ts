@@ -1,12 +1,15 @@
 import { encoding } from '@hapi/accept';
-import { ZstdInit } from '@oneidentity/zstd-js/asm/index.cjs.js';
+import { ZstdCodec, ZstdInit } from '@oneidentity/zstd-js/asm/index.cjs.js';
 import { createMiddleware } from 'hono/factory';
 
-const zstdInit = ZstdInit();
+let zstd: ZstdCodec;
+(async() => {
+  zstd = await ZstdInit();
+})();
 
 export const compressMiddleware = createMiddleware(async (c, next) => {
   await next();
-  const { ZstdStream } = await zstdInit;
+  const { ZstdStream } = zstd;
 
   const accept = encoding(c.req.header('X-Accept-Encoding'), ['zstd']);
 

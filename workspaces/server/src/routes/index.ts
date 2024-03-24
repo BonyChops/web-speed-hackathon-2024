@@ -24,7 +24,7 @@ app.use(
     origin: (origin) => origin,
   }),
 );
-// app.use(compressMiddleware);
+app.use(compressMiddleware);
 app.use(cacheControlMiddleware);
 
 app.get('/healthz', (c) => {
