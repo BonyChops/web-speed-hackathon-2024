@@ -22,6 +22,7 @@ export default defineConfig(async (): Promise<Options[]> => {
       clean: true,
       entry: {
         client: path.resolve(PACKAGE_DIR, './src/index.tsx'),
+        admin: path.resolve(PACKAGE_DIR, './src/admin.tsx'),
         serviceworker: path.resolve(PACKAGE_DIR, './src/serviceworker/index.ts'),
       },
       env: {
