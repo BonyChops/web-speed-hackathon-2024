@@ -44,7 +44,7 @@ export default defineConfig(async (): Promise<Options[]> => {
           },
           polyfills: {
             events: true,
-            fs: true,
+            fs: false,
             path: true,
           },
         }),
@@ -59,7 +59,7 @@ export default defineConfig(async (): Promise<Options[]> => {
       outDir: OUTPUT_DIR,
       platform: 'browser',
       shims: true,
-      sourcemap: 'inline',
+      sourcemap: false,
       splitting: true,
       target: ['chrome58', 'firefox57', 'safari11', 'edge18'],
       treeshake: true,
